@@ -82,19 +82,6 @@ describe('POP Routes', () => {
     cy.get('h1').contains('Welcome, Joe')
   })
 
-  it('should navigate to the "Messages" page from the POP Index page', () => {
-    cy.visit(`${Cypress.env('BASE_URL')}pop?bypass=true`)
-    cy.get('h1').contains('Welcome, Joe')
-
-    cy.contains('Messages').click()
-
-    cy.url().should('include', '/messages')
-    cy.get('h1').contains('Messages')
-
-    cy.go('back')
-    cy.get('h1').contains('Welcome, Joe')
-  })
-
   it('should navigate to the "Your Conditions" page from the POP Index page', () => {
     cy.visit(`${Cypress.env('BASE_URL')}pop?bypass=true`)
     cy.get('h1').contains('Welcome, Joe')

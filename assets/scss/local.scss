@@ -40,15 +40,9 @@ h4 {
   @include govuk-responsive-padding(1,'bottom');
 }
 
-.appointment-summary, .message-summary {
+.appointment-summary {
   @include govuk-responsive-padding(4);
   @include govuk-responsive-margin(6,'bottom');
-}
-
-.message-summary h3 {
-  @include govuk-responsive-margin(0);
-  @include govuk-responsive-padding(0);
-  @include govuk-responsive-padding(1,'bottom');
 }
 
 .govuk-box--rounded {

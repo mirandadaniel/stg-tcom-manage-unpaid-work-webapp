@@ -1,5 +1,4 @@
 import { Session, SessionData } from 'express-session'
-import { Message } from '../routes/data/messages'
 
 export type ProgressBreakdownItem = { title: string; completed: number; required: number }
 export type UserDetails = {
@@ -101,27 +100,6 @@ export interface PopService {
     location: string
     description: string
   }>
-
-  getMessageById(messageId: string, userId: string): Promise<Message | null>
-
-  addMessageToThread(
-    messageId: string,
-    messageText: string,
-    fileData?: { path: string; originalname: string },
-    userId?: string,
-    sessionMessages?: Message[],
-  ): Promise<boolean>
-
-  getAllMessages(): Promise<Message[]>
-
-  createNewMessage(
-    subject: string,
-    messageText: string,
-    fileData?: { path: string; originalname: string },
-    userId?: string,
-    recipient?: string,
-    sessionMessages?: Message[],
-  ): Promise<string>
 
   deleteEvidence(session: Session & Partial<SessionData>, filename: string): Promise<void>
   submitEvidence(session: Session & Partial<SessionData>): Promise<void>

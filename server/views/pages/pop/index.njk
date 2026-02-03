@@ -15,7 +15,7 @@
   title: "Missed appointment on 10 March 2025",
   showTitleAsHeading: true,
   dismissible: false,
-  html: 'You failed to attend your scheduled probation appointment on 10 March 2025. You have until 15 March 2025 to <a href="/pop/messages/thread/5cdc4302-3ad3-4378-b3e3-6ae0731ab4a1">respond to this notice</a> and explain why you missed this appointment. If you fail to do that, this might count as a breach of your supervision requirement and enforcement action might be taken.'
+  html: 'You failed to attend your scheduled probation appointment on 10 March 2025. You have until 15 March 2025 to respond to this notice and explain why you missed this appointment. If you fail to do that, this might count as a breach of your supervision requirement and enforcement action might be taken.'
 }) }}
 {% endif %}
 
@@ -26,16 +26,6 @@
   showTitleAsHeading: true,
   dismissible: false,
   html: 'You have an appointment booked for 15 March 2025 at 9am. <a href="/pop/view-appointment">View your appointment</a> if you need to reschedule it.'
-}) }}
-{% endif %}
-
-{% if checkin == "true" %}
-{{ mojAlert({
-  variant: "success",
-  title: "Check-in video submitted",
-  showTitleAsHeading: true,
-  dismissible: true,
-  html: "Your check-in video has been successfully submitted. This video was recorded at: " ~ location
 }) }}
 {% endif %}
 
@@ -94,28 +84,9 @@
          <li >
             <p class="govuk-heading-s">
             {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
-              <a class="govuk-link govuk-link--no-underline" href="#">Messages</a>
-            {% else %}
-              <a class="govuk-link govuk-link--no-underline" href="/pop/messages">Messages</a>
-            {% endif %}
-            </p>
-        </li>
-        <li >
-            <p class="govuk-heading-s">
-            {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
               <a class="govuk-link govuk-link--no-underline" href="#">Your conditions</a>
             {% else %}
               <a class="govuk-link govuk-link--no-underline" href="pop/conditions">Your conditions</a>
-            {% endif %}
-            </p>
-        </li>
-
-        <li >
-            <p class="govuk-heading-s">
-            {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
-              <a class="govuk-link govuk-link--no-underline" href="#">Video check-in</a>
-            {% else %}
-              <a class="govuk-link govuk-link--no-underline" href="/pop/video-checkIn">Video check-in</a>
             {% endif %}
             </p>
         </li>
