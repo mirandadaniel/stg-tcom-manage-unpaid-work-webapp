@@ -14,8 +14,12 @@ const contentTypes: Record<string, string> = {
   '.webp': 'image/webp',
 }
 
-export async function GET(request: Request, { params }: { params: { path: string[] } }) {
-  const assetPath = params.path.join('/')
+export async function GET(
+  request: Request,
+  { params }: { params: { path: string[] } | Promise<{ path: string[] }> },
+) {
+  const resolvedParams = await Promise.resolve(params)
+  const assetPath = resolvedParams.path.join('/')
   const filePath = path.join(process.cwd(), 'assets', assetPath)
   try {
     const data = await fs.readFile(filePath)

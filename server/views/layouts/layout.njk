@@ -9,10 +9,7 @@
 
 {% block pageTitle %}{{pageTitle | default(applicationName)}}{% endblock %}
 
-{% block header %}
-  {% include "../partials/header.njk" %}
-  {% include "../partials/phaseBanner.njk" %}
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block bodyStart %}
 {% endblock %}
@@ -21,10 +18,4 @@
   <script type="module" src="{{ '/assets/js/app.js' | assetMap }}"></script>
 {% endblock %}
 
-{% block footer %}
-  <footer class="govuk-footer">
-    <div class="govuk-footer__container">
-      <span class="govuk-footer__link">© Crown copyright</span>
-    </div>
-  </footer>
-{% endblock %}
+{% block footer %}{% endblock %}
