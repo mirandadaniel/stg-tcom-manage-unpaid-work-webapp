@@ -14,7 +14,7 @@ export async function getPopRequestContext(searchParams: PopSearchParams) {
 
   return {
     resolvedSearchParams,
-    userId: getSingleValue(resolvedSearchParams.userId) || 'prototype-user',
+    userId: getSingleValue(resolvedSearchParams.userId) || 'X971639',
     isBypass,
     bypassQuery: isBypass ? '?bypass=true' : '',
     bypassParam: isBypass ? 'bypass=true' : '',

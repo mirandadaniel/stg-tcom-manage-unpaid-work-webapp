@@ -11,9 +11,9 @@ const PrototypePopService: PopService = {
       name: 'Joe Bloggs',
       userId,
       hoursRequired: 100,
-      address: 'Flat 1, 1 Example St, London, SE1 1AA',
-      email: 'joe.bloggs@example.com',
-      phone: '07777 012345',
+      address: '123 Example Street\nLondon\nSW1A 1AA',
+      email: 'joe.bloggs@email.com',
+      phone: '07700 900123',
     }
   },
 

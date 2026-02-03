@@ -24,7 +24,7 @@ export const renderLegacyRoute = async (
   const env = getNunjucksEnv()
   const popService = getPopService()
   const rawUserId = searchParams.userId
-  const userId = Array.isArray(rawUserId) ? rawUserId[0] : rawUserId || 'prototype-user'
+  const userId = Array.isArray(rawUserId) ? rawUserId[0] : rawUserId || 'X971639'
   let routeContext: Record<string, unknown> = {}
 
   if (path === '/pop/your-details') {

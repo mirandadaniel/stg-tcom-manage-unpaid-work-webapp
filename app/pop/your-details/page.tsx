@@ -29,6 +29,10 @@ export default async function YourDetails({
       <SummaryCard title="Personal details">
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
+            <dt className="govuk-summary-list__key">Name</dt>
+            <dd className="govuk-summary-list__value">{userProfile.name}</dd>
+          </div>
+          <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Preferred name</dt>
             <dd className="govuk-summary-list__value">Joey</dd>
           </div>
@@ -42,7 +46,7 @@ export default async function YourDetails({
       <SummaryCard title="Identity numbers">
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
-            <dt className="govuk-summary-list__key">User ID</dt>
+            <dt className="govuk-summary-list__key">CRN</dt>
             <dd className="govuk-summary-list__value">{userProfile.userId}</dd>
           </div>
         </dl>
@@ -52,7 +56,14 @@ export default async function YourDetails({
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Address</dt>
-            <dd className="govuk-summary-list__value">{userProfile.address}</dd>
+            <dd className="govuk-summary-list__value">
+              {userProfile.address.split('\n').map((line, index) => (
+                <span key={`${line}-${index}`}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Phone number</dt>
@@ -60,7 +71,7 @@ export default async function YourDetails({
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Mobile number</dt>
-            <dd className="govuk-summary-list__value">{userProfile.phone}</dd>
+            <dd className="govuk-summary-list__value">07912 345678</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Email address</dt>
@@ -73,7 +84,7 @@ export default async function YourDetails({
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Name</dt>
-            <dd className="govuk-summary-list__value">Harold Bloggs</dd>
+            <dd className="govuk-summary-list__value">Jane Bloggs</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Relationship</dt>
@@ -81,7 +92,7 @@ export default async function YourDetails({
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Phone number</dt>
-            <dd className="govuk-summary-list__value">07777 345123</dd>
+            <dd className="govuk-summary-list__value">07700 900456</dd>
           </div>
         </dl>
       </SummaryCard>
@@ -90,11 +101,11 @@ export default async function YourDetails({
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Name</dt>
-            <dd className="govuk-summary-list__value">Julie Myers</dd>
+            <dd className="govuk-summary-list__value">Sarah Smith</dd>
           </div>
           <div className="govuk-summary-list__row">
-            <dt className="govuk-summary-list__key">Office phone number</dt>
-            <dd className="govuk-summary-list__value">020 999 1234</dd>
+            <dt className="govuk-summary-list__key">Phone number</dt>
+            <dd className="govuk-summary-list__value">020 7946 0958</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Office address</dt>
