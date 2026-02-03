@@ -175,6 +175,12 @@
   background-color: #f6d7d2;
 }
 
+.govuk-phase-banner .govuk-tag {
+  background-color: govuk-colour('yellow');
+  color: govuk-colour('black');
+  font-weight: 700;
+}
+
 .govuk-button--secondary {
   background-color: govuk-colour('light-grey');
   color: govuk-colour('black');
