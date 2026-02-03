@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Welcome, Joe</h1>
+<h1 class="govuk-heading-xl">Welcome, Joe</h1>
 
 {% if scenario == "missed" %}
 {{ mojAlert({
@@ -51,47 +51,42 @@
 }) }}
 {% endif %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-      <ul class="govuk-list navigation-list">
-        <li >
-          <p class="govuk-heading-s">
-            {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
-              <a class="govuk-link govuk-link--no-underline" href="#">Your details</a>
-            {% else %}
-              <a class="govuk-link govuk-link--no-underline" href="/pop/your-details">Your details</a>
-            {% endif %}
-          </p>
-        </li>
-        <li >
-            <p class="govuk-heading-s">
-            {% if (session.popVerificationStatus == "pending" or scenario == "pending")%}
-              <a class="govuk-link govuk-link--no-underline" href="#">Your progress</a>
-            {% else %}
-              <a class="govuk-link govuk-link--no-underline" href="/pop/your-progress">Your progress</a>
-            {% endif %}
-            </p>
-        </li>
-        <li >
-            <p class="govuk-heading-s">
-            {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
-              <a class="govuk-link govuk-link--no-underline" href="#">Past and upcoming appointments</a>
-            {% else %}
-              <a class="govuk-link govuk-link--no-underline" href="/pop/appointments">Past and upcoming appointments</a>
-            {% endif %}
-            </p>
-        </li>
-         <li >
-            <p class="govuk-heading-s">
-            {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
-              <a class="govuk-link govuk-link--no-underline" href="#">Your conditions</a>
-            {% else %}
-              <a class="govuk-link govuk-link--no-underline" href="pop/conditions">Your conditions</a>
-            {% endif %}
-            </p>
-        </li>
-      </ul>
-  </div>
+<div class="govuk-card-grid">
+  {% if (session.popVerificationStatus == "pending" or scenario == "pending") %}
+    <a class="govuk-card-link" href="/pop/your-details{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Your details</h2>
+      <p class="govuk-card-link__description">View your personal information</p>
+    </a>
+    <a class="govuk-card-link" href="/pop/your-progress{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Your progress</h2>
+      <p class="govuk-card-link__description">Track your community order progress</p>
+    </a>
+    <a class="govuk-card-link" href="/pop/appointments{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Past and upcoming appointments</h2>
+      <p class="govuk-card-link__description">View your scheduled sessions</p>
+    </a>
+    <a class="govuk-card-link" href="/pop/conditions{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Your conditions</h2>
+      <p class="govuk-card-link__description">View the conditions of your order</p>
+    </a>
+  {% else %}
+    <a class="govuk-card-link" href="/pop/your-details{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Your details</h2>
+      <p class="govuk-card-link__description">View your personal information</p>
+    </a>
+    <a class="govuk-card-link" href="/pop/your-progress{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Your progress</h2>
+      <p class="govuk-card-link__description">Track your community order progress</p>
+    </a>
+    <a class="govuk-card-link" href="/pop/appointments{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Past and upcoming appointments</h2>
+      <p class="govuk-card-link__description">View your scheduled sessions</p>
+    </a>
+    <a class="govuk-card-link" href="/pop/conditions{{ bypassQuery }}">
+      <h2 class="govuk-card-link__title">Your conditions</h2>
+      <p class="govuk-card-link__description">View the conditions of your order</p>
+    </a>
+  {% endif %}
 </div>
 
 {% endblock %}

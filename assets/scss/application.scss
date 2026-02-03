@@ -6,6 +6,8 @@ $govuk-page-width: $moj-page-width;
 
 @import "govuk-frontend/dist/govuk/index";
 @import './components/header-bar';
+@import './components/card-links';
+@import './components/lovable-overrides';
 @import './components/profile';
 @import './components/show-password';
 @import './components/camera';

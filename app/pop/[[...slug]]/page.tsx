@@ -1,11 +1,11 @@
 import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
-import { renderLegacyRoute } from '../../lib/legacy/renderLegacyRoute'
+import { renderLegacyRoute } from '../../../lib/legacy/renderLegacyRoute'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
-export default async function LegacyPage({
+export default async function PopPage({
   params,
   searchParams,
 }: {
@@ -21,7 +21,8 @@ export default async function LegacyPage({
   const mergedParams = effectiveBypass
     ? { ...resolvedSearchParams, bypass: effectiveBypass }
     : resolvedSearchParams
-  const path = `/${(resolvedParams.slug || []).join('/')}`
+  const slugPart = resolvedParams.slug?.length ? `/${resolvedParams.slug.join('/')}` : ''
+  const path = `/pop${slugPart}`
   const { html, status } = await renderLegacyRoute(path, mergedParams)
 
   if (status === 404) {

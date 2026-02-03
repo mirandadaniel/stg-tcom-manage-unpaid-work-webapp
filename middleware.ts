@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const allowedPathsWhenUnauthenticated = ['/admin/password']
+const allowedPathsWhenUnauthenticated = ['/admin/password', '/admin/password/submit']
 
 const shouldUseAuth = () => {
   const safeNodeEnv = process.env.NODE_ENV || 'not set'
@@ -10,6 +10,24 @@ const shouldUseAuth = () => {
 
 export function middleware(request: NextRequest) {
   if (!shouldUseAuth()) {
+    return NextResponse.next()
+  }
+
+  const bypassParam = request.nextUrl.searchParams.get('bypass') === 'true'
+  const bypassCookie = request.cookies.get('poc_bypass')?.value === 'true'
+
+  if (bypassParam || bypassCookie) {
+    if (bypassParam && !bypassCookie) {
+      const response = NextResponse.next()
+      const isSecure = request.nextUrl.protocol === 'https:'
+      response.cookies.set('poc_bypass', 'true', {
+        maxAge: 60 * 60 * 24 * 30,
+        sameSite: isSecure ? 'none' : 'lax',
+        httpOnly: true,
+        secure: isSecure,
+      })
+      return response
+    }
     return NextResponse.next()
   }
 

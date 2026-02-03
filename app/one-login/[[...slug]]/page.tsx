@@ -1,18 +1,17 @@
 import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
-import { renderLegacyRoute } from '../../lib/legacy/renderLegacyRoute'
+import { renderLegacyRoute } from '../../../lib/legacy/renderLegacyRoute'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
-export default async function LegacyPage({
+export default async function OneLoginPage({
   params,
   searchParams,
 }: {
-  params: { slug?: string[] } | Promise<{ slug?: string[] }>
+  params: { slug?: string[] }
   searchParams: Record<string, string | string[] | undefined>
 }) {
-  const resolvedParams = await Promise.resolve(params)
   const resolvedSearchParams = await Promise.resolve(searchParams)
   const bypassFromQuery = resolvedSearchParams.bypass
   const bypassValue = Array.isArray(bypassFromQuery) ? bypassFromQuery[0] : bypassFromQuery
@@ -21,7 +20,8 @@ export default async function LegacyPage({
   const mergedParams = effectiveBypass
     ? { ...resolvedSearchParams, bypass: effectiveBypass }
     : resolvedSearchParams
-  const path = `/${(resolvedParams.slug || []).join('/')}`
+  const slugPart = params.slug?.length ? `/${params.slug.join('/')}` : ''
+  const path = `/one-login${slugPart}`
   const { html, status } = await renderLegacyRoute(path, mergedParams)
 
   if (status === 404) {

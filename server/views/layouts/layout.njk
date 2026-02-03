@@ -1,5 +1,4 @@
 {% extends "govuk/template.njk" %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block head %}
   <meta charset="UTF-8">
@@ -23,14 +22,9 @@
 {% endblock %}
 
 {% block footer %}
-{{ govukFooter({
-meta: {
-items: [
-{
-href: "/sign-out",
-text: "Clear data"
-}
-]
-}
-}) }}
+  <footer class="govuk-footer">
+    <div class="govuk-footer__container">
+      <span class="govuk-footer__link">© Crown copyright</span>
+    </div>
+  </footer>
 {% endblock %}

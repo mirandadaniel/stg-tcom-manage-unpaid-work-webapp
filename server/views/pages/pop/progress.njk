@@ -1,98 +1,104 @@
 {% extends "../../layouts/layout.njk" %}
 {% from "govuk/components/back-link/macro.njk" import govukBackLink %}
-{% from "govuk/components/details/macro.njk" import govukDetails %}
-{% from "govuk/components/table/macro.njk" import govukTable %}
 
 {% set pageTitle = applicationName + " - Your progress" %}
 {% set mainClasses = "app-container govuk-body" %}
 
 {% block content %}
+{{ govukBackLink({
+  text: "Back to homepage",
+  href: "/pop" + bypassQuery
+}) }}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-     {{ govukBackLink({
-      text: "Back to homepage",
-      href: "/pop"
-    }) }}
+<h1 class="govuk-heading-xl">Your progress</h1>
+
+<h2 class="govuk-heading-m">Overall order</h2>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Community order</h3>
   </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Your progress</h1>
-    <p class="govuk-body subhead">Last updated on 10 March 2025, 2.29pm</p>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-      <div class="govuk-grid-row govuk-!-margin-top-6">
-        <div class="govuk-grid-column-three-quarters">
-          <p class="govuk-heading-m govuk-!-margin-0">Hours completed</p>
-        </div>
-        <div class="govuk-grid-column-one-quarter">
-          <span class="govuk-heading-m govuk-!-margin-0 govuk-!-padding-0  govuk-!-text-align-right">{{ progressData.totalCompletedHours }}/{{ progressData.totalHours }}</span>
-        </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Order period</dt>
+        <dd class="govuk-summary-list__value">15 January 2024 to 14 January 2026</dd>
       </div>
-      <div class="govuk-box total-hours">
-        {% set styleWidth = progressData.percentCompleted +'%' %}
-        <style nonce="{{ cspNonce }}">
-          .completed-hours-width { width: {{styleWidth}}}
-        </style>
-          <div class="completed-hours completed-hours-width"></div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Time completed</dt>
+        <dd class="govuk-summary-list__value">12 months</dd>
       </div>
-  {% include "./partials/progress-help.njk" %}
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-3">Next session</h1>
-    {% if nextAppointment %}
-      {% set appointment = nextAppointment %}
-      {% set isUpcoming = true %}
-      {% include "./partials/appointmentSummary.njk" %}
-    {% else %}
-      <p class="govuk-body subhead">Your next session will be shown here after it has been scheduled</p>
-    {% endif %}
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-m govuk-!-margin-bottom-3">Past attendance</h1>
-    {% if previousAttendence %}
-      {{ govukTable({
-        attributes: {
-          "data-module": "moj-sortable-table"
-        },
-        head: [
-            { text: "Date", attributes: {
-                "aria-sort": "descending"
-              }
-            },
-            { text: "Status", attributes: {
-                "aria-sort": "none"
-              }
-            },
-            { text: "Hours earned", attributes: {
-                "aria-sort": "none"
-              }
-            },
-            { text: "Feedback", attributes: {
-                "aria-sort": "none"
-              }
-            }
-        ],
-        rows: previousAttendence
-    })
-      }}
-    {% else %}
-      <p class="govuk-body subhead">Your previous attendance will be shown here after your first session</p>
-    {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Status</dt>
+        <dd class="govuk-summary-list__value">
+          <span class="govuk-tag govuk-tag--green">On track</span>
+        </dd>
+      </div>
+    </dl>
   </div>
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-margin-top-6 ">
-    {% include "./partials/unpaidWorkSummary.njk" %}
-    {% include "./partials/unpaidWorkWarning.njk" %}
+<h2 class="govuk-heading-m">Order requirements</h2>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Unpaid work</h3>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Hours completed</dt>
+        <dd class="govuk-summary-list__value">{{ progressData.totalCompletedHours }} of {{ progressData.totalHours }} hours</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Status</dt>
+        <dd class="govuk-summary-list__value">
+          <span class="govuk-tag govuk-tag--green">On track</span>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Curfew</h3>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Curfew period</dt>
+        <dd class="govuk-summary-list__value">16 December 2024 to 15 March 2025</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Time completed</dt>
+        <dd class="govuk-summary-list__value">6 weeks</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Status</dt>
+        <dd class="govuk-summary-list__value">
+          <span class="govuk-tag govuk-tag--green">Compliant</span>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h3 class="govuk-summary-card__title">Rehabilitation activity requirement (RAR)</h3>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Days completed</dt>
+        <dd class="govuk-summary-list__value">8 of 20 days</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Status</dt>
+        <dd class="govuk-summary-list__value">
+          <span class="govuk-tag govuk-tag--green">On track</span>
+        </dd>
+      </div>
+    </dl>
   </div>
 </div>
 {% endblock %}

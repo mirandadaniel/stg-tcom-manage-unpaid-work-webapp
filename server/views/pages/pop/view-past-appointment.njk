@@ -6,73 +6,42 @@
 {% set mainClasses = "app-container govuk-body" %}
 
 {% block content %}
+{{ govukBackLink({
+  text: "Back to Your appointments",
+  href: "/pop/appointments" + bypassQuery
+}) }}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-     {{ govukBackLink({
-      text: "Back to Your appointments",
-      href: "/pop/appointments"
-    }) }}
-    <h1 class="govuk-heading-l govuk-!-margin-top-8 govuk-!-margin-bottom-1">View past appointment</h1>
+<h1 class="govuk-heading-xl">View past appointment</h1>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Appointment details</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Meeting point</dt>
+        <dd class="govuk-summary-list__value">123 Garden Street, London SE1 7TH</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Date</dt>
+        <dd class="govuk-summary-list__value">Monday 20 Jan 2025</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Time</dt>
+        <dd class="govuk-summary-list__value">9am - 5pm</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Your behavior and attitude</dt>
+        <dd class="govuk-summary-list__value">Excellent</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Supervisor comments</dt>
+        <dd class="govuk-summary-list__value">
+          Great work on the skirting board. Appreciate you keeping the energy up even after 3pm
+        </dd>
+      </div>
+    </dl>
   </div>
 </div>
-
-<div class="govuk-grid-row govuk-!-margin-top-6">
-  <div class="govuk-grid-column-full">
-
-    <div class="govuk-box govuk-box--rounded govuk-!-padding-4 border box-shadow">
-      <div class="govuk-grid-row govuk-!-margin-bottom-4">
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s">Meeting point</h3>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <p class="govuk-!-color-muted govuk-!-padding-0 govuk-!-margin-0">123 Garden Street, London SE1 7TH</p>
-        </div>
-      </div>
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-color-light">
-
-      <div class="govuk-grid-row govuk-!-margin-bottom-2">
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s">Date</h3>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <p class="govuk-body">Monday 20 Jan 2025</p>
-        </div>
-      </div>
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-color-light">
-
-      <div class="govuk-grid-row govuk-!-margin-bottom-2">
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s">Time</h3>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <p class="govuk-body">9am - 5pm</p>
-        </div>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-color-light">
-
-      <div class="govuk-grid-row govuk-!-margin-bottom-2">
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s">Your behavior and attitude</h3>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <p class="govuk-body">Excellent</p>
-        </div>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4 govuk-!-color-light">
-
-      <div class="govuk-grid-row govuk-!-margin-bottom-2">
-        <div class="govuk-grid-column-one-third">
-          <h3 class="govuk-heading-s">Supervisor comments</h3>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <p class="govuk-body">Great work on the skirting board. Appreciate you keeping the energy up even after 3pm</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 {% endblock %}

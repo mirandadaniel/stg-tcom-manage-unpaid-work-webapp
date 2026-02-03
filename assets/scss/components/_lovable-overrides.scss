@@ -1,0 +1,219 @@
+.govuk-header {
+  background-color: govuk-colour('black');
+  border-bottom: 10px solid govuk-colour('blue');
+}
+
+.govuk-header__container {
+  @include govuk-width-container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include govuk-responsive-padding(2, 'top');
+  @include govuk-responsive-padding(2, 'bottom');
+}
+
+.govuk-header__branding {
+  display: flex;
+  align-items: center;
+  gap: govuk-spacing(2);
+}
+
+.govuk-header__logo {
+  width: 36px;
+  height: 32px;
+  fill: govuk-colour('white');
+}
+
+.govuk-header__link {
+  @include govuk-link-common;
+  @include govuk-font($size: 19, $weight: 'bold');
+  color: govuk-colour('white');
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: govuk-colour('black');
+  }
+}
+
+.govuk-header__navigation {
+  display: flex;
+  align-items: center;
+  gap: govuk-spacing(3);
+}
+
+.govuk-header__navigation-link {
+  @include govuk-link-common;
+  @include govuk-font($size: 19);
+  color: govuk-colour('white');
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.govuk-phase-banner {
+  border-bottom: 1px solid $govuk-border-colour;
+}
+
+.govuk-phase-banner__content {
+  @include govuk-width-container;
+  display: flex;
+  align-items: center;
+  gap: govuk-spacing(2);
+}
+
+.govuk-main-wrapper {
+  @include govuk-width-container;
+  @include govuk-responsive-padding(6, 'top');
+  @include govuk-responsive-padding(6, 'bottom');
+}
+
+.govuk-heading-xl {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 govuk-spacing(6);
+}
+
+.govuk-heading-l {
+  @include govuk-font($size: 24, $weight: 'bold');
+  margin: 0 0 govuk-spacing(4);
+}
+
+.govuk-heading-m {
+  @include govuk-font($size: 19, $weight: 'bold');
+  margin: 0 0 govuk-spacing(3);
+}
+
+.govuk-heading-s {
+  @include govuk-font($size: 16, $weight: 'bold');
+  margin: 0 0 govuk-spacing(2);
+}
+
+.govuk-body {
+  @include govuk-font(19);
+  margin: 0 0 govuk-spacing(4);
+}
+
+.govuk-body-s {
+  @include govuk-font(16);
+  margin: 0 0 govuk-spacing(4);
+  color: govuk-colour('dark-grey');
+}
+
+.govuk-link {
+  color: govuk-colour('blue');
+
+  &:hover {
+    color: govuk-colour('dark-blue');
+  }
+}
+
+.govuk-summary-card {
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: govuk-spacing(6);
+}
+
+.govuk-summary-card__title-wrapper {
+  background-color: govuk-colour('light-grey');
+  border-bottom: 1px solid $govuk-border-colour;
+  padding: govuk-spacing(3) govuk-spacing(4);
+}
+
+.govuk-summary-card__title {
+  @include govuk-font($size: 19, $weight: 'bold');
+  margin: 0;
+}
+
+.govuk-summary-card__content {
+  padding: govuk-spacing(4);
+}
+
+.govuk-summary-list {
+  border-top: 1px solid $govuk-border-colour;
+  margin: 0;
+}
+
+.govuk-summary-list__row {
+  border-bottom: 1px solid $govuk-border-colour;
+  padding: govuk-spacing(3) 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.govuk-summary-list__key {
+  @include govuk-font($size: 19, $weight: 'bold');
+  width: 33%;
+  padding-right: govuk-spacing(4);
+}
+
+.govuk-summary-list__value {
+  @include govuk-font(19);
+  flex: 1;
+}
+
+.govuk-tag {
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 5px 8px 4px;
+  color: #ffffff;
+  background-color: #1d70b8;
+}
+
+.govuk-tag--green {
+  color: #005a30;
+  background-color: #cce2d8;
+}
+
+.govuk-tag--red {
+  color: #942514;
+  background-color: #f6d7d2;
+}
+
+.govuk-button--secondary {
+  background-color: govuk-colour('light-grey');
+  color: govuk-colour('black');
+  box-shadow: 0 2px 0 govuk-colour('mid-grey');
+
+  &:hover {
+    background-color: govuk-colour('mid-grey');
+  }
+}
+
+.govuk-back-link {
+  @include govuk-link-common;
+  @include govuk-font(16);
+  color: govuk-colour('black');
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.govuk-inset-text {
+  border-left: 10px solid $govuk-border-colour;
+  padding: govuk-spacing(4);
+  margin: govuk-spacing(6) 0;
+}
+
+.govuk-footer {
+  background-color: govuk-colour('light-grey');
+  border-top: 1px solid $govuk-border-colour;
+  padding: govuk-spacing(6) 0;
+  margin-top: govuk-spacing(8);
+}
+
+.govuk-footer__container {
+  @include govuk-width-container;
+}
+
+.govuk-footer__link {
+  @include govuk-font(16);
+  color: govuk-colour('black');
+}

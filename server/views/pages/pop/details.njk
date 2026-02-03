@@ -5,133 +5,126 @@
 {% set mainClasses = "app-container govuk-body" %}
 
 {% block content %}
+{{ govukBackLink({
+  text: "Back to homepage",
+  href: "/pop" + bypassQuery
+}) }}
 
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-1">Your details</h1>
+<p class="govuk-body-s govuk-!-margin-bottom-6">Last updated on 10 March 2025, 2.29pm</p>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-     {{ govukBackLink({
-      text: "Back to homepage",
-      href: "/pop"
-    }) }}
+<p class="govuk-body">
+  To change any of this information, contact your probation practitioner.
+</p>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Personal details</h2>
   </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Your details</h1>
-    <p class="govuk-body subhead">Last updated on 10 March 2025, 2.29pm</p>
-  </div>
-</div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <div class="govuk-box govuk-!-padding-3 govuk-!-margin-bottom-6 govuk-!-padding-top-4 border box-shadow">
-      <div class="profile">
-        <div class="prefix">J</div>
-        <div class="name">
-        </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">{{ userProfile.name }}</dd>
       </div>
-
-      <div class="">
-        <div class="govuk-!-border-bottom">
-          <h2 class="govuk-!-margin-bottom-2">Personal information</h2>
-          <p class="govuk-!-margin-bottom-2 govuk-!-color-light">To change your personal information, <a href="/pop/new-message">contact your probation practitioner</a>.</p>
-          <div class="govuk-!-margin-top-4">
-            <div class="govuk-!-margin-bottom-4">
-              <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Name</h3>
-              <p class="">{{ userProfile.name }}</p>
-            </div>
-             <div class="govuk-!-margin-bottom-4">
-              <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">User ID</h3>
-              <p class="">{{ userProfile.userId }}</p>
-            </div>
-            <div class="govuk-!-margin-bottom-4">
-              <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Date of birth</h3>
-              <p class="">21 November 1992</p>
-            </div>
-            <div class="govuk-!-margin-bottom-4">
-              <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Order type</h3>
-              <p class="">Community order</p>
-            </div>
-            <div class="govuk-!-margin-bottom-1">
-              <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Address</h3>
-              <p class="">{{ userProfile.address | safe }}</p>
-            </div>
-          </div>
-        </div>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-color-light govuk-!-background-color-light">
-
-        <div class="govuk-!-padding-bottom-4">
-          <h2 class=" govuk-!-margin-bottom-2">Contact details</h2>
-          <div class="govuk-!-margin-top-4">
-            <div class="govuk-!-margin-bottom-4 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Email</h3>
-                <p class="govuk-!-margin-bottom-0">{{ userProfile.email }}</p>
-              </div>
-              <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-0 govuk-!-text-decoration-none" href="#">Change</a>
-            </div>
-            <div class="govuk-!-margin-bottom-1 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Phone number</h3>
-                <p class="govuk-!-margin-bottom-0">{{ userProfile.phone }}</p>
-              </div>
-              <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-0 govuk-!-text-decoration-none" href="#">Change</a>
-            </div>
-          </div>
-        </div>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-color-light govuk-!-background-color-light">
-
-        <div class="govuk-!-padding-bottom-4">
-          <h2 class="govuk-!-margin-bottom-2">Emergency contact details</h2>
-          <div class="govuk-!-margin-top-4">
-            <div class="govuk-!-margin-bottom-4 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Name</h3>
-                <p class="govuk-!-margin-bottom-0">Harold Bloggs</p>
-              </div>
-            </div>
-            <div class="govuk-!-margin-bottom-1 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Phone number</h3>
-                <p class="govuk-!-margin-bottom-0">07777 345123</p>
-              </div>
-              <a class="govuk-link govuk-link--no-visited-state govuk-!-padding-0 govuk-!-text-decoration-none" href="#">Change</a>
-            </div>
-          </div>
-        </div>
-
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-color-light govuk-!-background-color-light">
-
-        <div class="govuk-!-padding-bottom-4">
-          <h2 class="govuk-!-margin-bottom-2">Probation practitioner details</h2>
-          <div class="govuk-!-margin-top-4">
-            <div class="govuk-!-margin-bottom-4 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Name</h3>
-                <p class="govuk-!-margin-bottom-0">Julie Myers</p>
-              </div>
-            </div>
-              <div class="govuk-!-margin-bottom-4 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Office address</h3>
-                <p class="govuk-!-margin-bottom-0">National Probation Service, 235 Greenwich High Road,  London SE10 8NB</p>
-
-              </div>
-            </div>
-            <div class="govuk-!-margin-bottom-1 govuk-!-display-flex govuk-!-justify-content-between govuk-!-align-items-center">
-              <div>
-                <h3 class="govuk-!-margin-bottom-0 govuk-!-color-light">Office phone number</h3>
-                <p class="govuk-!-margin-bottom-0">020 999 1234</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Preferred name</dt>
+        <dd class="govuk-summary-list__value">Joey</dd>
       </div>
-    </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Date of birth</dt>
+        <dd class="govuk-summary-list__value">21 November 1992</dd>
+      </div>
+    </dl>
   </div>
 </div>
 
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Identity numbers</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">User ID</dt>
+        <dd class="govuk-summary-list__value">{{ userProfile.userId }}</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Contact details</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">{{ userProfile.address | safe }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Phone number</dt>
+        <dd class="govuk-summary-list__value">{{ userProfile.phone }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Mobile number</dt>
+        <dd class="govuk-summary-list__value">{{ userProfile.phone }}</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Email address</dt>
+        <dd class="govuk-summary-list__value">{{ userProfile.email }}</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Emergency contact details</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">Harold Bloggs</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Relationship</dt>
+        <dd class="govuk-summary-list__value">Spouse</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Phone number</dt>
+        <dd class="govuk-summary-list__value">07777 345123</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Probation practitioner details</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">Julie Myers</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Office phone number</dt>
+        <dd class="govuk-summary-list__value">020 999 1234</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Office address</dt>
+        <dd class="govuk-summary-list__value">
+          National Probation Service<br />
+          235 Greenwich High Road<br />
+          London<br />
+          SE10 8NB
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
 {% endblock %}

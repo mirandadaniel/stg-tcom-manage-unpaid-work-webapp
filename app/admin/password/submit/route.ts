@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 
+export const runtime = 'nodejs'
+
 export async function POST(request: Request) {
   const formData = await request.formData()
   const submittedPassword = String(formData.get('password') || '')
@@ -8,11 +10,12 @@ export async function POST(request: Request) {
 
   if (submittedPassword && password && submittedPassword === password) {
     const response = NextResponse.redirect(new URL(returnURL, request.url))
+    const isSecure = new URL(request.url).protocol === 'https:'
     response.cookies.set('poc_check', password, {
       maxAge: 60 * 60 * 24 * 30,
-      sameSite: 'none',
+      sameSite: isSecure ? 'none' : 'lax',
       httpOnly: true,
-      secure: true,
+      secure: isSecure,
     })
     return response
   }

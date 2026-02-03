@@ -9,13 +9,13 @@
   <div class="govuk-grid-column-full">
      {{ govukBackLink({
       text: "Back",
-      href: "/pop/conditions"
+  href: "/pop/conditions" + bypassQuery
     }) }}
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Unpaid work</h1>
+    <h1 class="govuk-heading-xl">Unpaid work</h1>
   </div>
 </div>
 
@@ -46,7 +46,7 @@
     Need help understanding your conditions?
     </p>
     <p class="govuk-!-margin-0 govuk-!-padding-0 govuk-!-padding-bottom-2">Contact your probation practitioner for guidance on any conditions you are unsure about.</p>
-    <a class="govuk-link govuk-link--no-visited-state" href="/pop/new-message">Message</a>
+    <a class="govuk-link govuk-link--no-visited-state" href="/pop/new-message{{ bypassQuery }}">Message</a>
 
   </div>
 </div>
