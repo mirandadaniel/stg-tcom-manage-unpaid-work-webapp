@@ -19,19 +19,24 @@
 .govuk-header__branding {
   display: flex;
   align-items: center;
-  gap: govuk-spacing(2);
+  gap: 0;
   margin: 0;
   padding: 0;
+  min-width: 0;
+  padding-right: 120px;
 }
 
 .govuk-header__logo {
-  width: auto;
-  height: 40px;
-  fill: govuk-colour('white');
   display: block;
-  flex-shrink: 0;
-  position: static;
-  object-fit: contain;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+  flex: 0 0 40px;
+  background-image: url('/assets/images/crest.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   margin-left: 30px;
   transform: translateY(2px);
 }
@@ -44,8 +49,9 @@
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 6px;
   line-height: 1.2;
+  white-space: nowrap;
 
   &:hover {
     text-decoration: underline;
@@ -53,6 +59,25 @@
 
   &:focus {
     color: govuk-colour('black');
+  }
+}
+
+@include govuk-media-query($until: tablet) {
+  .govuk-header__branding {
+    gap: 2px;
+    padding-right: 90px;
+  }
+
+  .govuk-header__link {
+    margin-left: 2px !important;
+  }
+
+  .govuk-header__logo {
+    height: 32px;
+  }
+
+  .govuk-header__link {
+    @include govuk-font($size: 19, $weight: 'bold');
   }
 }
 

@@ -11,12 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="govuk-header">
           <div className="govuk-header__container">
             <div className="govuk-header__branding">
-              <img
-                className="govuk-header__logo"
-                src="/assets/images/crest.svg"
-                alt=""
-                aria-hidden="true"
-              />
+              <span className="govuk-header__logo" aria-hidden="true" />
               <a href="/" className="govuk-header__link">
                 Manage my community sentence
               </a>
