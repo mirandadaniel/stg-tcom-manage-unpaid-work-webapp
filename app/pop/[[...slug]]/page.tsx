@@ -1,33 +1,8 @@
-import { cookies } from 'next/headers'
 import { notFound } from 'next/navigation'
-import { renderLegacyRoute } from '../../../lib/legacy/renderLegacyRoute'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
-export default async function PopPage({
-  params,
-  searchParams,
-}: {
-  params: { slug?: string[] } | Promise<{ slug?: string[] }>
-  searchParams: Record<string, string | string[] | undefined>
-}) {
-  const resolvedParams = await Promise.resolve(params)
-  const resolvedSearchParams = await Promise.resolve(searchParams)
-  const bypassFromQuery = resolvedSearchParams.bypass
-  const bypassValue = Array.isArray(bypassFromQuery) ? bypassFromQuery[0] : bypassFromQuery
-  const bypassCookie = (await cookies()).get('poc_bypass')?.value
-  const effectiveBypass = bypassValue || bypassCookie
-  const mergedParams = effectiveBypass
-    ? { ...resolvedSearchParams, bypass: effectiveBypass }
-    : resolvedSearchParams
-  const slugPart = resolvedParams.slug?.length ? `/${resolvedParams.slug.join('/')}` : ''
-  const path = `/pop${slugPart}`
-  const { html, status } = await renderLegacyRoute(path, mergedParams)
-
-  if (status === 404) {
-    notFound()
-  }
-
-  return <div dangerouslySetInnerHTML={{ __html: html }} />
+export default function PopCatchAll() {
+  notFound()
 }
