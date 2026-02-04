@@ -33,23 +33,3 @@ export const probationConditions: Array<string> = [
   'Notify us as far in advance as possible if you know you will be unable to attend a scheduled appointment',
   'If you are unable to provide evidence of why you cannot attend an appointment before it takes place, you must provide evidence within five working days of the failure to attend.',
 ]
-
-// these are added here from a previous prototype iteration in case we want to return to them
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const specialistConditions: Array<string> = [
-  'Be of good behaviour and not behave in a way which undermines the purpose of the licence period.',
-  'Not commit any offence.',
-  'Keep in touch with the supervising officer in accordance with instructions given by the supervising officer.',
-  'Receive visits from the supervising officer in accordance with instructions given by the supervising officer.',
-  'Reside permanently at an address approved by the supervising officer and obtain the prior permission of the supervising officer for any stay of one or more nights at a different address.',
-  'Not undertake work, or a particular type of work, unless it is approved by the supervising officer and notify the supervising officer in advance of any proposal to undertake work or a particular type of work',
-  'Not travel outside the United Kingdom, the Channel Islands or the Isle of Man except with the prior permission of your supervising officer or for the purposes of immigration deportation or removal.',
-  'Tell your supervising officer if you use a name which is different from the name or names which appear on your licence.',
-  'Tell your supervising officer if you change or add any contact details, including phone number or email.',
-  'Notify your supervising officer of any intimate relationships.',
-  'Attend appointments arranged by your supervising officer. This includes appointments with: employment services, drug treatment providers, alcohol treatment providers.',
-  'Not to reside (not even to stay for one night) in the same household as any child under the age of 18 without the prior approval of your supervising officer.',
-  'To comply with any instruction given by your supervising officer requiring you to attend a sex offender treatment programme.',
-  'Not to enter the area of Moss Side, as defined by your supervising officer, without the prior approval of your supervising officer.',
-  'Not to contact or associate with Bob Smith or Bill Jones without the prior approval of your supervising officer.',
-]
