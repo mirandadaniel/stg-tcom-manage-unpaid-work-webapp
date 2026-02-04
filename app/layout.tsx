@@ -1,4 +1,5 @@
 import '../assets/scss/application.scss'
+import '@your-org/chat-widget/dist/styles.css'
 import AppChrome from './_components/AppChrome'
 
 export const metadata = {

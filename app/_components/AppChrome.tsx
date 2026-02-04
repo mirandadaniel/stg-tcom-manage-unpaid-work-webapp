@@ -54,7 +54,7 @@
            <span className="govuk-phase-banner__text">This is a prototype.</span>
          </p>
        </div>
-       {children}
+      {children}
        <footer className="govuk-footer">
          <div className="govuk-footer__container">
            <span className="govuk-footer__link">© Crown copyright</span>
@@ -63,3 +63,5 @@
      </>
    )
  }
+
+ 

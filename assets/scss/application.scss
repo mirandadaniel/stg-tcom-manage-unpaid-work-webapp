@@ -11,4 +11,6 @@ $govuk-page-width: $moj-page-width;
 @import './components/profile';
 @import './components/show-password';
 @import './components/camera';
+@import './components/chat-widget-modal';
+@import './components/chat-widget-embed';
 @import './local';

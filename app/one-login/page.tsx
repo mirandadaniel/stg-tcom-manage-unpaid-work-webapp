@@ -4,8 +4,9 @@ import { redirect } from 'next/navigation'
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
-export default function OneLoginHome() {
-  const isPopLogin = cookies().get('is_pop_login')?.value === 'true'
+export default async function OneLoginHome() {
+  const cookieStore = await cookies()
+  const isPopLogin = cookieStore.get('is_pop_login')?.value === 'true'
   if (isPopLogin) {
     redirect('/pop')
   }

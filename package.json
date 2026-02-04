@@ -9,7 +9,7 @@
     "watch-ts": "tsc -w",
     "build": "next build",
     "start": "next start",
-    "start:dev": "next dev",
+    "start:dev": "NEXT_DISABLE_TURBOPACK=1 next dev",
     "lint": "eslint . --cache --max-warnings 0",
     "lint-fix": "eslint . --cache --max-warnings 0 --fix",
     "typecheck": "tsc",
@@ -76,6 +76,7 @@
   "dependencies": {
     "@ministryofjustice/frontend": "^5.1",
     "@types/cookie-parser": "^1.4.8",
+    "@your-org/chat-widget": "file:../../familylaw/familylaw/frontend/widget-package/your-org-chat-widget-0.1.2.tgz",
     "agentkeepalive": "^4.6.0",
     "applicationinsights": "^2.9.6",
     "bcrypt": "^5.0.1",
@@ -105,7 +106,9 @@
     "passport-oauth2": "^1.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-markdown": "^10.1.0",
     "redis": "^4.7.0",
+    "remark-gfm": "^4.0.1",
     "sass": "^1.97.3",
     "superagent": "^10.1.1",
     "uuid": "^11.1.0"

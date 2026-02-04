@@ -1,4 +1,5 @@
 import Alert from './_components/Alert'
+import ChatWidgetModal from './_components/ChatWidgetModal'
 import { getPopRequestContext, getSearchParam } from '../../lib/pop/request'
 
 export const dynamic = 'force-dynamic'
@@ -77,6 +78,7 @@ export default async function PopHome({
           <p className="govuk-card-link__description">View the conditions of your order</p>
         </a>
       </div>
+      <ChatWidgetModal />
     </>
   )
 }

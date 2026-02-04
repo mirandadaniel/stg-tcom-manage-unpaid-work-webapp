@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server'
+/* eslint-disable import/prefer-default-export -- Next.js route handlers require named exports */
+import { NextRequest, NextResponse } from 'next/server'
 import { EVIDENCE_COOKIE, parseEvidenceCookie, serializeEvidenceCookie } from '../../../lib/pop/evidence'
 
 const buildRedirectUrl = (requestUrl: string, path: string) => {
@@ -18,7 +19,7 @@ const extractFiles = (formData: FormData) =>
       filename: (item as File).name,
     }))
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const formData = await request.formData()
   const newEvidence = extractFiles(formData)
 

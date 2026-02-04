@@ -7,6 +7,10 @@ const nextConfig = {
     includePaths: [path.join(__dirname), path.join(__dirname, 'node_modules')],
   },
   serverExternalPackages: ['nunjucks', 'chokidar', 'fsevents'],
+  transpilePackages: ['@your-org/chat-widget'],
+  experimental: {
+    externalDir: true,
+  },
 }
 
 module.exports = nextConfig

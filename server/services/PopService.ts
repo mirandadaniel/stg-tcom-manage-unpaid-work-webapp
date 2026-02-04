@@ -73,8 +73,30 @@ export interface PopService {
   getProbationConditionSummary(userId: string): Promise<ProbationConditionsSummary>
 
   getAppointments(userId: string): Promise<{
-    upcomingAppointments: Array<{ title: string; date: string; time: string }>
-    pastAppointments: Array<{ title: string; date: string; time: string }>
+    upcomingAppointments: Array<{
+      title: string
+      date: string
+      time: string
+      location: string
+      contact?: string
+      contactLink?: string
+      description?: string
+      category?: string
+      showOnMap?: boolean
+      status?: string
+    }>
+    pastAppointments: Array<{
+      title: string
+      date: string
+      time: string
+      location: string
+      contact?: string
+      contactLink?: string
+      description?: string
+      category?: string
+      showOnMap?: boolean
+      status?: string
+    }>
   }>
 
   getNextAppointment(userId: string): Promise<{
