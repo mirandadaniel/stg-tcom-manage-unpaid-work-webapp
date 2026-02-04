@@ -37,24 +37,8 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className="govuk-grid-column-one-quarter">
-            <p className="govuk-!-font-weight-bold">Staff facing</p>
-            <ul className="govuk-list govuk-list--bullet">
-              <li>
-                <a href="/staff">v1.4</a>
-                <p>Last updated: 4 Apr 2025</p>
-              </li>
-            </ul>
-          </div>
-          <div className="govuk-grid-column-one-quarter">
-            <p className="govuk-!-font-weight-bold">Supervisor facing</p>
-            <ul className="govuk-list govuk-list--bullet">
-              <li>
-                <a href="/supervisor">v1.4</a>
-                <p>Last updated: 4 Apr 2025</p>
-              </li>
-            </ul>
-          </div>
+          <div className="govuk-grid-column-one-quarter" />
+          <div className="govuk-grid-column-one-quarter" />
           <div className="govuk-grid-column-one-quarter" />
         </div>
       </main>
