@@ -221,6 +221,11 @@ body,
   flex: 1;
 }
 
+.govuk-table__header,
+.govuk-table__cell {
+  padding: govuk-spacing(2) govuk-spacing(3);
+}
+
 .govuk-tag {
   font-size: 0.875rem;
   line-height: 1;

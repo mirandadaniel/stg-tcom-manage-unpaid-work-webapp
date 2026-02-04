@@ -11,7 +11,7 @@ export default async function Appointments({
 }: {
   searchParams: Record<string, string | string[] | undefined>
 }) {
-  const { userId, bypassQuery, bypassParam, resolvedSearchParams } = await getPopRequestContext(searchParams)
+  const { userId, bypassQuery, resolvedSearchParams } = await getPopRequestContext(searchParams)
   const submittedEvidence = getSearchParam(resolvedSearchParams, 'submittedEvidence') === 'true'
   const { upcomingAppointments, pastAppointments } = await getAppointments(userId)
 
@@ -41,14 +41,11 @@ export default async function Appointments({
       </p>
 
       <h2 className="govuk-heading-l">Upcoming appointments</h2>
-      {upcomingAppointments.map((appointment, index) => (
+      {upcomingAppointments.map(appointment => (
         <AppointmentSummaryCard
           key={`${appointment.date}-${appointment.title}`}
           appointment={appointment}
           isUpcoming
-          isFirst={index === 0}
-          submittedEvidence={submittedEvidence}
-          bypassParam={bypassParam}
         />
       ))}
 
@@ -58,9 +55,6 @@ export default async function Appointments({
           key={`${appointment.date}-${appointment.title}`}
           appointment={appointment}
           isUpcoming={false}
-          isFirst={false}
-          submittedEvidence={false}
-          bypassParam={bypassParam}
         />
       ))}
     </>

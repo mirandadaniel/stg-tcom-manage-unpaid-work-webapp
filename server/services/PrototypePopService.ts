@@ -30,11 +30,11 @@ const PrototypePopService: PopService = {
         { title: 'Total', completed: 50, required: 100 },
       ]
     } else {
-      totalCompletedHours = 0
+      totalCompletedHours = 40
       breakdown = [
-        { title: 'In person', completed: 0, required: 70 },
-        { title: 'Education, Training and Employment (ETE) programmes', completed: 0, required: 30 },
-        { title: 'Total', completed: 0, required: 100 },
+        { title: 'In person', completed: 30, required: 70 },
+        { title: 'Education, Training and Employment (ETE) programmes', completed: 10, required: 30 },
+        { title: 'Total', completed: 40, required: 100 },
       ]
     }
     return {
@@ -110,15 +110,14 @@ const PrototypePopService: PopService = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async getNextAppointment(userId) {
     return {
-      date: 'Saturday 15 March 2025',
-      time: '9am - 5pm',
-      title: 'Community Garden Maintenance',
-      location: '123 Garden Street, London SE1 7TH',
-      contact: 'Karen Smith',
+      date: 'Monday 3 February 2026',
+      time: '10:00am',
+      title: 'Probation appointment',
+      location: 'Probation Office, 123 Main Street, London SE1 2AB',
+      contact: 'Sarah Johnson',
       contactLink: '',
-      description:
-        'Group session focused on weeding, planting seasonal vegetables, and Probation appointment garden maintenance. Bring appropriate clothing for outdoor work, tools will be provided. Break times will be scheduled during the session.',
-      category: 'Unpaid Work',
+      description: 'Probation appointment to review progress and next steps.',
+      category: 'Probation appointment',
       showOnMap: true,
     }
   },

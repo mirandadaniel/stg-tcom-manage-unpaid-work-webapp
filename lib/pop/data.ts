@@ -18,6 +18,7 @@ export type Appointment = {
   description?: string
   category?: string
   showOnMap?: boolean
+  status?: string
 }
 
 type AppointmentLists = {

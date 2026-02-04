@@ -38,7 +38,7 @@ export default async function YourDetails({
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Date of birth</dt>
-            <dd className="govuk-summary-list__value">21 November 1992</dd>
+            <dd className="govuk-summary-list__value">15 March 1985</dd>
           </div>
         </dl>
       </SummaryCard>
