@@ -16,7 +16,7 @@ export default async function Conditions({
   return (
     <>
       <a className="govuk-back-link" href={`/pop${bypassQuery}`}>
-        Back to homepage
+        Back
       </a>
 
       <h1 className="govuk-heading-xl">Your conditions</h1>

@@ -30,7 +30,7 @@ export default async function Appointments({
       ) : null}
 
       <a className="govuk-back-link" href={`/pop${bypassQuery}`}>
-        Back to homepage
+        Back
       </a>
 
       <h1 className="govuk-heading-xl">Appointments</h1>

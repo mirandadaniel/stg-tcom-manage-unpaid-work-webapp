@@ -14,7 +14,8 @@ export default async function AppointmentNotifyUploadEvidence({
 }) {
   const { bypassQuery, bypassParam, resolvedSearchParams } = await getPopRequestContext(searchParams)
   const errorMessage = getSearchParam(resolvedSearchParams, 'error')
-  const evidenceCookie = cookies().get(EVIDENCE_COOKIE)?.value
+  const cookieStore = await cookies()
+  const evidenceCookie = cookieStore.get(EVIDENCE_COOKIE)?.value
   const uploadedEvidence = parseEvidenceCookie(evidenceCookie)
 
   return (
