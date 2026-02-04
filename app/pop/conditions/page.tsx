@@ -54,11 +54,7 @@ export default async function Conditions({
         </dl>
       </SummaryCard>
 
-      <p className="govuk-body">
-        <a href={`/pop/probation-conditions${bypassQuery}`} target="_blank" className="govuk-link">
-          View what probation expects of you (opens in a new tab)
-        </a>
-      </p>
+      <span />
     </>
   )
 }

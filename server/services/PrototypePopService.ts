@@ -163,7 +163,15 @@ const PrototypePopService: PopService = {
       orderType: 'Community order',
       startDate: '16 December 2024',
       requirementsCompletionDate: '15 December 2025',
-      requirements: [{ category: 'Unpaid work', requirement: '100 hours' }],
+      requirements: [
+        {
+          category: 'Curfew',
+          requirement:
+            'You must stay at 123 Example Street, London, SW1A 1AA between 10:00 pm and 6:00 am on Mondays to Thursdays, and between 11:00 pm and 8:00 am on Fridays and Saturdays for a period of 3 months from 16 December 2024 to 15 March 2025',
+        },
+        { category: 'Unpaid work', requirement: '100 hours' },
+        { category: 'Rehabilitation activity requirement (RAR)', requirement: '7 days' },
+      ],
     }
   },
 
