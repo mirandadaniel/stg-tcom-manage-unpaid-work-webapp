@@ -1,6 +1,3 @@
-import { Message } from '../../routes/data/messages'
-import { Placement } from '../../routes/data/supervisor-placements'
-
 export declare module 'express-session' {
   // Declare that the session will potentially contain these additional fields
   interface SessionData {
@@ -13,8 +10,6 @@ export declare module 'express-session' {
     is_pop_login: boolean
     verificationPhoto: string
     popVerificationStatus: 'pending' | 'failed' | 'verified'
-    placements: Placement[]
-    messages: Message[]
     uploadedEvidence: Array<{ path: string; filename: string }>
     checkInVideoPath: string
   }
@@ -34,11 +29,5 @@ export declare global {
       logout(done: (err: unknown) => void): void
     }
 
-    interface MessageItem {
-      html: string
-      type: string
-      timestamp: string
-      sender: string
-    }
   }
 }
