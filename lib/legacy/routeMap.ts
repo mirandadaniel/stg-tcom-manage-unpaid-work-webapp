@@ -4,25 +4,11 @@ type RouteMatch = {
 }
 
 const exactRoutes: Record<string, RouteMatch> = {
-  '/': { template: 'pages/index' },
-  '/sign-out': { template: 'pages/index' },
   '/staff': { template: 'pages/staff/cases' },
   '/staff/verify-pop-photo': { template: 'pages/staff/verify-pop-photo' },
   '/staff/verify-success': { template: 'pages/staff/verify-success' },
   '/staff/verify-reject': { template: 'pages/staff/verify-reject' },
   '/supervisor': { template: 'pages/supervisor/placements' },
-  '/one-login': { template: 'pages/one-login/sign-in-or-create' },
-  '/one-login/sign-in-or-create': { template: 'pages/one-login/sign-in-or-create' },
-  '/one-login/enter-email-address': { template: 'pages/one-login/enter-email-address' },
-  '/one-login/enter-email-address-login': { template: 'pages/one-login/enter-email-address-login' },
-  '/one-login/enter-password': { template: 'pages/one-login/enter-password' },
-  '/one-login/create-password': { template: 'pages/one-login/create-password' },
-  '/one-login/check-phone': { template: 'pages/one-login/check-phone' },
-  '/one-login/check-phone-login': { template: 'pages/one-login/check-phone-login' },
-  '/one-login/get-security-code': { template: 'pages/one-login/get-security-code' },
-  '/one-login/verify-security-code': { template: 'pages/one-login/verify-security-code' },
-  '/one-login/account-created': { template: 'pages/one-login/account-created' },
-  '/one-login/enter-phone-number': { template: 'pages/one-login/enter-phone-number' },
   '/pop/verify': { template: 'pages/pop-id/submit-photo' },
   '/pop/verify/options': { template: 'pages/pop-id/options' },
   '/pop/verify/upload-photo': { template: 'pages/pop-id/upload-photo' },
@@ -33,7 +19,6 @@ const exactRoutes: Record<string, RouteMatch> = {
   '/pop/verify/uploading-photo': { template: 'pages/pop-id/uploading-photo' },
   '/pop/verify/confirm-photo': { template: 'pages/pop-id/submit-photo' },
   '/pop/verify/success': { template: 'pages/pop-id/success' },
-  '/admin/password': { template: 'pages/prototype-admin/password' },
 }
 
 export const matchRouteToTemplate = (path: string): RouteMatch => {
