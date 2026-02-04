@@ -7,8 +7,16 @@ export async function POST(request: Request) {
   const submittedPassword = String(formData.get('password') || '')
   const returnURL = String(formData.get('returnURL') || '/')
   const password = process.env.POC_PASSWORD || ''
+  const hasPassword = Boolean(password)
+  const isMatch = submittedPassword.length > 0 && submittedPassword === password
 
-  if (submittedPassword && password && submittedPassword === password) {
+  console.log(
+    `[poc-auth] submit received (hasPassword=${hasPassword}, hasInput=${
+      submittedPassword.length > 0
+    }, isMatch=${isMatch})`,
+  )
+
+  if (isMatch) {
     const response = NextResponse.redirect(new URL(returnURL, request.url))
     const isSecure = new URL(request.url).protocol === 'https:'
     response.cookies.set('poc_check', password, {
@@ -17,6 +25,7 @@ export async function POST(request: Request) {
       httpOnly: true,
       secure: isSecure,
     })
+    console.log(`[poc-auth] set poc_check cookie (secure=${isSecure})`)
     return response
   }
 

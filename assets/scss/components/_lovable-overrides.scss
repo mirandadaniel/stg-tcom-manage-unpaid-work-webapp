@@ -1,6 +1,6 @@
 .govuk-header {
   background-color: govuk-colour('black');
-  border-bottom: 3.5px solid govuk-colour('blue');
+  border-bottom: 2.5px solid govuk-colour('blue');
   padding: 0;
 }
 
@@ -10,20 +10,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0;
+  padding: 0 20px;
   margin: 0;
   min-height: 64px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .govuk-header__branding {
   display: flex;
   align-items: center;
-  gap: 0;
+  column-gap: 13px;
   margin: 0;
   padding: 0;
   min-width: 0;
-  padding-right: 120px;
+  flex: 1 1 auto;
 }
 
 .govuk-header__logo {
@@ -37,7 +38,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  margin-left: 30px;
+  margin-left: 0;
   transform: translateY(2px);
 }
 
@@ -49,9 +50,10 @@
   display: flex;
   align-items: center;
   padding: 0;
-  margin: 0 0 0 6px;
+  margin: 0;
   line-height: 1.2;
   white-space: nowrap;
+  min-width: 0;
 
   &:hover {
     text-decoration: underline;
@@ -65,11 +67,11 @@
 @include govuk-media-query($until: tablet) {
   .govuk-header__branding {
     gap: 2px;
-    padding-right: 90px;
+    padding-right: 0;
   }
 
   .govuk-header__link {
-    margin-left: 2px !important;
+    margin-left: 0 !important;
     white-space: normal;
   }
 
@@ -80,18 +82,20 @@
   .govuk-header__link {
     @include govuk-font($size: 19, $weight: 'bold');
   }
+
+  .govuk-header__navigation {
+    margin-left: auto;
+  }
 }
 
 .govuk-header__navigation {
   display: flex;
   align-items: center;
   gap: govuk-spacing(3);
-  margin: 0;
+  margin: 0 0 0 auto;
   padding: 0;
-  position: absolute;
-  right: 30px;
-  top: 0;
-  bottom: 0;
+  position: static;
+  flex: 0 0 auto;
 }
 
 .govuk-header__navigation-link {
@@ -104,6 +108,7 @@
   padding: 0;
   margin: 0;
   line-height: 1.2;
+  white-space: nowrap;
 
   &:hover {
     text-decoration: underline;
@@ -179,6 +184,7 @@
 body,
 .govuk-template__body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 .govuk-body-s {
