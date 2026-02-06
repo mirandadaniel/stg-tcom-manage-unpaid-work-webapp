@@ -20,7 +20,7 @@ export default async function YourDetails({
       </a>
 
       <h1 className="govuk-heading-xl govuk-!-margin-bottom-1">Your details</h1>
-      <p className="govuk-body-s govuk-!-margin-bottom-6">Last updated on 10 March 2025, 2.29pm</p>
+      <p className="govuk-body-s govuk-!-margin-bottom-6">Last updated on {userProfile.lastUpdated}</p>
 
       <p className="govuk-body">
         To change any of this information, contact your probation practitioner.
@@ -34,11 +34,11 @@ export default async function YourDetails({
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Preferred name</dt>
-            <dd className="govuk-summary-list__value">Joey</dd>
+            <dd className="govuk-summary-list__value">{userProfile.preferredName}</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Date of birth</dt>
-            <dd className="govuk-summary-list__value">15 March 1985</dd>
+            <dd className="govuk-summary-list__value">{userProfile.dateOfBirth}</dd>
           </div>
         </dl>
       </SummaryCard>
@@ -71,7 +71,7 @@ export default async function YourDetails({
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Mobile number</dt>
-            <dd className="govuk-summary-list__value">07912 345678</dd>
+            <dd className="govuk-summary-list__value">{userProfile.mobile}</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Email address</dt>
@@ -84,15 +84,15 @@ export default async function YourDetails({
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Name</dt>
-            <dd className="govuk-summary-list__value">Jane Bloggs</dd>
+            <dd className="govuk-summary-list__value">{userProfile.emergencyContact.name}</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Relationship</dt>
-            <dd className="govuk-summary-list__value">Spouse</dd>
+            <dd className="govuk-summary-list__value">{userProfile.emergencyContact.relationship}</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Phone number</dt>
-            <dd className="govuk-summary-list__value">07700 900456</dd>
+            <dd className="govuk-summary-list__value">{userProfile.emergencyContact.phone}</dd>
           </div>
         </dl>
       </SummaryCard>
@@ -101,22 +101,21 @@ export default async function YourDetails({
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Name</dt>
-            <dd className="govuk-summary-list__value">Sarah Johnson</dd>
+            <dd className="govuk-summary-list__value">{userProfile.probationPractitioner.name}</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Phone number</dt>
-            <dd className="govuk-summary-list__value">020 7946 0958</dd>
+            <dd className="govuk-summary-list__value">{userProfile.probationPractitioner.phone}</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Office address</dt>
             <dd className="govuk-summary-list__value">
-              National Probation Service
-              <br />
-              235 Greenwich High Road
-              <br />
-              London
-              <br />
-              SE10 8NB
+              {userProfile.probationPractitioner.officeAddress.split('\n').map((line, index) => (
+                <span key={`${line}-${index}`}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </dd>
           </div>
         </dl>

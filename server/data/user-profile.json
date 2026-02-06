@@ -1,0 +1,145 @@
+{
+  "personalDetails": {
+    "name": "Joe Bloggs",
+    "preferredName": "Joey",
+    "dateOfBirth": "15 March 1985",
+    "userId": "X123456"
+  },
+  "contactDetails": {
+    "address": "123 Example Street\nLondon\nSW1A 1AA",
+    "phone": "07700 900123",
+    "mobile": "07912 345678",
+    "email": "joe.bloggs@email.com"
+  },
+  "emergencyContact": {
+    "name": "Jane Bloggs",
+    "relationship": "Spouse",
+    "phone": "07700 900456"
+  },
+  "probationPractitioner": {
+    "name": "Sarah Johnson",
+    "phone": "020 7946 0958",
+    "officeAddress": "National Probation Service\n235 Greenwich High Road\nLondon\nSE10 8NB"
+  },
+  "orderDetails": {
+    "orderType": "Community order",
+    "startDate": "16 December 2024",
+    "requirementsCompletionDate": "15 December 2025",
+    "requirements": [
+      {
+        "category": "Curfew",
+        "requirement": "You must stay at 123 Example Street, London, SW1A 1AA between 10:00 pm and 6:00 am on Mondays to Thursdays, and between 11:00 pm and 8:00 am on Fridays and Saturdays for a period of 3 months from 16 December 2024 to 15 March 2025"
+      },
+      {
+        "category": "Unpaid work",
+        "requirement": "100 hours"
+      },
+      {
+        "category": "Rehabilitation activity requirement (RAR)",
+        "requirement": "7 days"
+      }
+    ]
+  },
+  "unpaidWork": {
+    "hoursRequired": 100,
+    "totalCompletedHours": 40,
+    "totalHours": 100,
+    "percentCompleted": 40,
+    "breakdown": [
+      {
+        "title": "In person",
+        "completed": 30,
+        "required": 70
+      },
+      {
+        "title": "Education, Training and Employment (ETE) programmes",
+        "completed": 10,
+        "required": 30
+      },
+      {
+        "title": "Total",
+        "completed": 40,
+        "required": 100
+      }
+    ],
+    "nextAppointment": {
+      "title": "Community Garden Maintenance",
+      "date": "Friday 15 March 2024",
+      "time": "09:00",
+      "location": "123 Garden Street, London SE1 7TH"
+    },
+    "schedule": {
+      "day": "Saturdays",
+      "time": "9am - 5pm",
+      "frequency": "Weekly",
+      "meetingPoint": "123 Garden Street, London SE1 7TH",
+      "workType": "Group session",
+      "requirements": "Bring a packed lunch and wear appropriate clothing for outdoor work. Shorts, vests or skirts are not allowed. Tools will be provided. Break times will be scheduled during the session.",
+      "warning": "If you do not wear the right clothes or do not bring your packed lunch, you might be sent back home and your hours will not be credited."
+    }
+  },
+  "appointments": {
+    "upcoming": [
+      {
+        "date": "Monday 3 February 2026",
+        "time": "10:00am",
+        "title": "Probation appointment",
+        "location": "Probation Office, 123 Main Street, London SE1 2AB",
+        "contact": "Sarah Johnson",
+        "contactLink": "",
+        "description": "Probation appointment to review progress and next steps.",
+        "category": "Probation appointment",
+        "showOnMap": true
+      },
+      {
+        "date": "Monday 17 February 2026",
+        "time": "10:00am",
+        "title": "Probation appointment",
+        "location": "Probation Office, 123 Main Street, London SE1 2AB",
+        "contact": "Sarah Johnson",
+        "contactLink": "",
+        "description": "Probation appointment to review progress and next steps.",
+        "category": "Probation appointment",
+        "showOnMap": true
+      }
+    ],
+    "past": [
+      {
+        "date": "Monday 20 January 2026",
+        "time": "10:00am",
+        "title": "Probation appointment",
+        "location": "Probation Office, 123 Main Street, London SE1 2AB",
+        "contact": "Sarah Johnson",
+        "contactLink": "",
+        "category": "Probation appointment",
+        "showOnMap": false,
+        "status": "Attended"
+      },
+      {
+        "date": "Monday 6 January 2026",
+        "time": "10:00am",
+        "title": "Probation appointment",
+        "location": "Probation Office, 123 Main Street, London SE1 2AB",
+        "contact": "Sarah Johnson",
+        "contactLink": "",
+        "category": "Probation appointment",
+        "showOnMap": false,
+        "status": "Attended"
+      },
+      {
+        "date": "Monday 9 December 2025",
+        "time": "10:00am",
+        "title": "Probation appointment",
+        "location": "Probation Office, 123 Main Street, London SE1 2AB",
+        "contact": "Sarah Johnson",
+        "contactLink": "",
+        "category": "Probation appointment",
+        "showOnMap": false,
+        "status": "Attended"
+      }
+    ]
+  },
+  "metadata": {
+    "lastUpdated": "6 February 2026, 3.45pm"
+  }
+}

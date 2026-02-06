@@ -1,11 +1,30 @@
 export type ProgressBreakdownItem = { title: string; completed: number; required: number }
+
+export type EmergencyContact = {
+  name: string
+  relationship: string
+  phone: string
+}
+
+export type ProbationPractitioner = {
+  name: string
+  phone: string
+  officeAddress: string
+}
+
 export type UserDetails = {
   name: string
+  preferredName: string
+  dateOfBirth: string
   userId: string
   hoursRequired: number
   address: string
   email: string
   phone: string
+  mobile: string
+  emergencyContact: EmergencyContact
+  probationPractitioner: ProbationPractitioner
+  lastUpdated: string
 }
 
 export type ProgressDetails = {
