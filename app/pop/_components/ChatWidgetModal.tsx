@@ -4,6 +4,9 @@ import { useState } from 'react'
 
 import { ChatWidget } from '@your-org/chat-widget'
 
+const CHAT_API_BASE_URL =
+  process.env.NEXT_PUBLIC_CHAT_API_BASE_URL ?? 'http://localhost:8000'
+
 export default function ChatWidgetModal() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -34,7 +37,7 @@ export default function ChatWidgetModal() {
             </div>
             <div className="chat-widget-modal__body">
               <div className="chat-widget-modal__widget">
-                <ChatWidget apiBaseUrl="http://localhost:8000" domain="probation" />
+                <ChatWidget apiBaseUrl={CHAT_API_BASE_URL} domain="probation" />
               </div>
             </div>
           </div>
