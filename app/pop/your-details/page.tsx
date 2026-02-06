@@ -101,7 +101,7 @@ export default async function YourDetails({
         <dl className="govuk-summary-list">
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Name</dt>
-            <dd className="govuk-summary-list__value">Sarah Smith</dd>
+            <dd className="govuk-summary-list__value">Sarah Johnson</dd>
           </div>
           <div className="govuk-summary-list__row">
             <dt className="govuk-summary-list__key">Phone number</dt>

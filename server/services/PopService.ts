@@ -1,5 +1,3 @@
-import { Session, SessionData } from 'express-session'
-
 export type ProgressBreakdownItem = { title: string; completed: number; required: number }
 export type UserDetails = {
   name: string
@@ -21,16 +19,6 @@ export type ProgressDetails = {
     time: string
     location: string
   }
-}
-
-export type AttendenceRecord = {
-  date: string
-  sortableDate: string
-  status: string // will be an enum in real system
-  credits: number
-  unit: string
-  performanceRating: string // will be an enum in real system
-  feedback: string // note format, expect possibility of multiple lines
 }
 
 export type OrderRequirement = {
@@ -59,8 +47,6 @@ export interface PopService {
   getUserDetails(userId: string): Promise<UserDetails>
 
   getProgressDetails(userId: string): Promise<ProgressDetails>
-
-  getPreviousAttendence(userId: string): Promise<Array<AttendenceRecord>>
 
   getUnpaidWorkConditions(userId: string): Promise<Array<string>>
 
@@ -98,32 +84,4 @@ export interface PopService {
       status?: string
     }>
   }>
-
-  getNextAppointment(userId: string): Promise<{
-    date: string
-    time: string
-    title: string
-    location: string
-    contact: string
-    contactLink: string
-    description: string
-    category: string
-    showOnMap: boolean
-  }>
-
-  getAppointmentDetails(
-    appointmentId: string,
-    userId: string,
-  ): Promise<{
-    id: string
-    title: string
-    date: string
-    time: string
-    location: string
-    description: string
-  }>
-
-  deleteEvidence(session: Session & Partial<SessionData>, filename: string): Promise<void>
-  submitEvidence(session: Session & Partial<SessionData>): Promise<void>
-  uploadEvidence(session: Session & Partial<SessionData>, files: Express.Multer.File[]): Promise<void>
 }
