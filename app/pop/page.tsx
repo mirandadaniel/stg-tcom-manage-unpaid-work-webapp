@@ -1,6 +1,7 @@
 import Alert from './_components/Alert'
 import ChatWidgetModal from './_components/ChatWidgetModal'
 import { getPopRequestContext, getSearchParam } from '../../lib/pop/request'
+import { getUserDetails } from '../../lib/pop/data'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -10,12 +11,13 @@ export default async function PopHome({
 }: {
   searchParams: Record<string, string | string[] | undefined>
 }) {
-  const { resolvedSearchParams, bypassQuery } = await getPopRequestContext(searchParams)
+  const { userId, resolvedSearchParams, bypassQuery } = await getPopRequestContext(searchParams)
   const scenario = getSearchParam(resolvedSearchParams, 'scenario')
+  const userProfile = await getUserDetails(userId)
 
   return (
     <>
-      <h1 className="govuk-heading-xl">Welcome, Joe</h1>
+      <h1 className="govuk-heading-xl">Welcome, {userProfile.preferredName}</h1>
 
       {scenario === 'missed' ? (
         <Alert variant="error" title="Missed appointment on 10 March 2025">
