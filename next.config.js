@@ -6,7 +6,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname), path.join(__dirname, 'node_modules')],
   },
-  serverExternalPackages: ['nunjucks', 'chokidar', 'fsevents'],
+  serverExternalPackages: ['chokidar', 'fsevents'],
   transpilePackages: ['@your-org/chat-widget'],
   experimental: {
     externalDir: true,
