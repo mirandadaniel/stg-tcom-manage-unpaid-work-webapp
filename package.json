@@ -7,9 +7,9 @@
   "scripts": {
     "prepare": "husky",
     "watch-ts": "tsc -w",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "start:dev": "NEXT_DISABLE_TURBOPACK=1 next dev",
+    "start:dev": "next dev --webpack --port 3001",
     "lint": "eslint . --cache --max-warnings 0",
     "lint-fix": "eslint . --cache --max-warnings 0 --fix",
     "typecheck": "tsc",
@@ -19,7 +19,8 @@
     "clean": "rm -rf dist node_modules",
     "rebuild": "npm run clean && npm i && npm run build",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "backup-chat-widget": "mkdir -p vendor/chat-widget && cp ../../familylaw/familylaw/frontend/widget-package/your-org-chat-widget-0.1.2.tgz vendor/chat-widget/"
   },
   "engines": {
     "node": "^22",
@@ -67,13 +68,14 @@
   "lint-staged": {
     "*.{ts,js,css}": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix --no-warn-ignored"
     ],
     "*.json": [
       "prettier --write"
     ]
   },
   "dependencies": {
+    "@familylaw/chatbot": "file:../../familylaw/familylaw/frontend/chatbot-module",
     "@ministryofjustice/frontend": "^5.1",
     "@types/cookie-parser": "^1.4.8",
     "@your-org/chat-widget": "file:../../familylaw/familylaw/frontend/widget-package/your-org-chat-widget-0.1.2.tgz",
@@ -157,7 +159,11 @@
     "lint-staged": "^15.4.3",
     "mocha-junit-reporter": "^2.2.1",
     "nock": "^14.0.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
     "prettier": "^3.5.1",
+    "@tailwindcss/typography": "^0.5.15",
+    "tailwindcss": "^3.4.16",
     "prettier-plugin-jinja-template": "^2.0.0",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.6",

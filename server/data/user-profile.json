@@ -23,12 +23,12 @@
   },
   "orderDetails": {
     "orderType": "Community order",
-    "startDate": "16 December 2024",
-    "requirementsCompletionDate": "15 December 2025",
+    "startDate": "16 December 2025",
+    "requirementsCompletionDate": "15 December 2026",
     "requirements": [
       {
         "category": "Curfew",
-        "requirement": "You must stay at 123 Example Street, London, SW1A 1AA between 10:00 pm and 6:00 am on Mondays to Thursdays, and between 11:00 pm and 8:00 am on Fridays and Saturdays for a period of 3 months from 16 December 2024 to 15 March 2025"
+        "requirement": "You must stay at 123 Example Street, London, SW1A 1AA between 10:00 pm and 6:00 am on Mondays to Thursdays, and between 11:00 pm and 8:00 am on Fridays and Saturdays for a period of 3 months from 16 December 2025 to 15 March 2026"
       },
       {
         "category": "Unpaid work",
@@ -36,6 +36,7 @@
       },
       {
         "category": "Rehabilitation activity requirement (RAR)",
+        "activity": "Education, Training and Employment (ETE) programmes",
         "requirement": "7 days"
       }
     ]
@@ -46,25 +47,13 @@
     "totalHours": 100,
     "percentCompleted": 40,
     "breakdown": [
-      {
-        "title": "In person",
-        "completed": 30,
-        "required": 70
-      },
-      {
-        "title": "Education, Training and Employment (ETE) programmes",
-        "completed": 10,
-        "required": 30
-      },
-      {
-        "title": "Total",
-        "completed": 40,
-        "required": 100
-      }
+      { "title": "In person", "completed": 25, "required": 70 },
+      { "title": "Education, Training and Employment (ETE) programmes", "completed": 15, "required": 30 },
+      { "title": "Total", "completed": 40, "required": 100 }
     ],
     "nextAppointment": {
       "title": "Community Garden Maintenance",
-      "date": "Friday 15 March 2024",
+      "date": "Satuurday 14 March 2026",
       "time": "09:00",
       "location": "123 Garden Street, London SE1 7TH"
     },
@@ -81,7 +70,7 @@
   "appointments": {
     "upcoming": [
       {
-        "date": "Monday 3 February 2026",
+        "date": "Monday 3 March 2026",
         "time": "10:00am",
         "title": "Probation appointment",
         "location": "Probation Office, 123 Main Street, London SE1 2AB",
@@ -92,7 +81,7 @@
         "showOnMap": true
       },
       {
-        "date": "Monday 17 February 2026",
+        "date": "Monday 17 March 2026",
         "time": "10:00am",
         "title": "Probation appointment",
         "location": "Probation Office, 123 Main Street, London SE1 2AB",

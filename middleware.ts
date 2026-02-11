@@ -33,14 +33,14 @@ export function middleware(request: NextRequest) {
 
   const password = process.env.POC_PASSWORD
   if (!password) {
-    return new NextResponse(
-      '<h1>Error:</h1><p>Password not set.</p>',
-      { status: 500, headers: { 'Content-Type': 'text/html' } },
-    )
+    return new NextResponse('<h1>Error:</h1><p>Password not set.</p>', {
+      status: 500,
+      headers: { 'Content-Type': 'text/html' },
+    })
   }
 
   const { pathname } = request.nextUrl
-  if (allowedPathsWhenUnauthenticated.includes(pathname)) {
+  if (allowedPathsWhenUnauthenticated.includes(pathname) || pathname.startsWith('/chatbot/')) {
     return NextResponse.next()
   }
 

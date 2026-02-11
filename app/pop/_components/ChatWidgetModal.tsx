@@ -2,10 +2,27 @@
 
 import { useState } from 'react'
 
-import { ChatWidget } from '@your-org/chat-widget'
+import { ChatWidget } from '@familylaw/chatbot'
 
-const CHAT_API_BASE_URL =
-  process.env.NEXT_PUBLIC_CHAT_API_BASE_URL ?? 'http://localhost:8000'
+// Use same origin so requests hit this app (3001); Next.js rewrites proxy /chatbot/* to familylaw (3000).
+// When env is unset, use current origin so the widget always has a valid base URL (avoids connection errors).
+function getChatApiBaseUrl(): string {
+  const env = process.env.NEXT_PUBLIC_CHAT_API_BASE_URL
+  if (env != null && env !== '') return env
+  if (typeof globalThis !== 'undefined' && 'location' in globalThis) {
+    return (globalThis as unknown as { location: { origin: string } }).location.origin
+  }
+  return ''
+}
+
+// Same config as familylaw repo probation domain (lib/site-config.ts)
+const PROBATION_CONFIG = {
+  title: 'Hi, Joey!',
+  welcomeMessage: `I'm your AI assistant for probation services guidance.
+
+How can I help you today?`,
+  placeholder: 'Ask about probation services...',
+}
 
 export default function ChatWidgetModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,24 +38,23 @@ export default function ChatWidgetModal() {
         Chat with us
       </button>
       {isOpen ? (
-        <div className="chat-widget-modal" role="dialog" aria-modal="true" aria-label="Chat with us">
+        <div className="chat-widget-modal" role="dialog" aria-modal="true" aria-label="Chat">
           <div className="chat-widget-modal__backdrop" onClick={() => setIsOpen(false)} />
           <div className="chat-widget-modal__content">
-            <div className="chat-widget-modal__header">
-              <h2 className="chat-widget-modal__title">Chat with us</h2>
-              <button
-                type="button"
-                className="chat-widget-modal__close"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close chat"
-              >
-                ×
-              </button>
-            </div>
-            <div className="chat-widget-modal__body">
-              <div className="chat-widget-modal__widget">
-                <ChatWidget apiBaseUrl={CHAT_API_BASE_URL} domain="probation" />
-              </div>
+            <button
+              type="button"
+              className="chat-widget-modal__close"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close chat"
+            >
+              ×
+            </button>
+            <div className="chat-widget-modal__widget">
+              <ChatWidget
+                apiBaseUrl={getChatApiBaseUrl()}
+                config={PROBATION_CONFIG}
+                domain="probation"
+              />
             </div>
           </div>
         </div>

@@ -1,3 +1,3 @@
 import hmppsConfig from '@ministryofjustice/eslint-config-hmpps'
 
-export default hmppsConfig()
+export default [{ ignores: ['assets/css/tailwind.css'] }, ...hmppsConfig()]

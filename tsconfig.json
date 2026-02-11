@@ -12,7 +12,11 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "experimentalDecorators": true,
-    "typeRoots": ["./server/@types", "./node_modules/@types"]
+    "typeRoots": ["./server/@types", "./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@familylaw/chatbot": ["./types/familylaw-chatbot.d.ts"]
+    }
   },
   "exclude": [
     "node_modules",
@@ -21,7 +25,8 @@
     "esbuild",
     "eslint.config.mjs",
     "cypress/**/*.ts",
-    "server/**"
+    "server/**",
+    "../../familylaw/familylaw/frontend/chatbot-module"
   ],
-  "include": ["**/*.js", "**/*.ts", "**/*.tsx"]
+  "include": ["**/*.js", "**/*.ts", "**/*.tsx", "types/**/*.d.ts"]
 }
