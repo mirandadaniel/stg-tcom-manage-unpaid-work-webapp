@@ -1,5 +1,3 @@
-import ChatWidgetModal from './_components/ChatWidgetModal'
-
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 
@@ -9,7 +7,6 @@ export default function PopLayout({ children }: { children: React.ReactNode }) {
       <main className="govuk-main-wrapper app-container govuk-body" id="main-content">
         {children}
       </main>
-      <ChatWidgetModal />
     </div>
   )
 }

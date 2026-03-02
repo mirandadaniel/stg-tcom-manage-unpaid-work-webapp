@@ -19,8 +19,7 @@
     "clean": "rm -rf dist node_modules",
     "rebuild": "npm run clean && npm i && npm run build",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "backup-chat-widget": "mkdir -p vendor/chat-widget && cp ../../familylaw/familylaw/frontend/widget-package/your-org-chat-widget-0.1.2.tgz vendor/chat-widget/"
+    "cypress:run": "cypress run"
   },
   "engines": {
     "node": "^22",
@@ -75,10 +74,8 @@
     ]
   },
   "dependencies": {
-    "@familylaw/chatbot": "file:../../familylaw/familylaw/frontend/chatbot-module",
     "@ministryofjustice/frontend": "^5.1",
     "@types/cookie-parser": "^1.4.8",
-    "@your-org/chat-widget": "file:../../familylaw/familylaw/frontend/widget-package/your-org-chat-widget-0.1.2.tgz",
     "agentkeepalive": "^4.6.0",
     "applicationinsights": "^2.9.6",
     "bcrypt": "^5.0.1",
@@ -107,9 +104,7 @@
     "passport-oauth2": "^1.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-markdown": "^10.1.0",
     "redis": "^4.7.0",
-    "remark-gfm": "^4.0.1",
     "sass": "^1.97.3",
     "superagent": "^10.1.1",
     "uuid": "^11.1.0"
@@ -162,7 +157,6 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "prettier": "^3.5.1",
-    "@tailwindcss/typography": "^0.5.15",
     "tailwindcss": "^3.4.16",
     "prettier-plugin-jinja-template": "^2.0.0",
     "supertest": "^7.0.0",
@@ -172,6 +166,7 @@
   "overrides": {
     "@jgoz/esbuild-plugin-typecheck": {
       "esbuild": "$esbuild"
-    }
+    },
+    "serialize-javascript": "^7.0.3"
   }
 }

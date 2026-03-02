@@ -40,7 +40,7 @@ export function middleware(request: NextRequest) {
   }
 
   const { pathname } = request.nextUrl
-  if (allowedPathsWhenUnauthenticated.includes(pathname) || pathname.startsWith('/chatbot/')) {
+  if (allowedPathsWhenUnauthenticated.includes(pathname)) {
     return NextResponse.next()
   }
 

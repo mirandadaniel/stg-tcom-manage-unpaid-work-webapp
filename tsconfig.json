@@ -14,19 +14,8 @@
     "experimentalDecorators": true,
     "typeRoots": ["./server/@types", "./node_modules/@types"],
     "baseUrl": ".",
-    "paths": {
-      "@familylaw/chatbot": ["./types/familylaw-chatbot.d.ts"]
-    }
+    "paths": {}
   },
-  "exclude": [
-    "node_modules",
-    "assets/**/*.js",
-    "dist",
-    "esbuild",
-    "eslint.config.mjs",
-    "cypress/**/*.ts",
-    "server/**",
-    "../../familylaw/familylaw/frontend/chatbot-module"
-  ],
+  "exclude": ["node_modules", "assets/**/*.js", "dist", "esbuild", "eslint.config.mjs", "cypress/**/*.ts", "server/**"],
   "include": ["**/*.js", "**/*.ts", "**/*.tsx", "types/**/*.d.ts"]
 }
